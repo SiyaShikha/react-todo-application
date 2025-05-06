@@ -7,10 +7,11 @@ export const Input = ({ onSubmit }) => {
     setValue(event.target.value);
   };
 
-  const handleAdd = () => {
-    if (value === "") return;
-    onSubmit(value);
-    setValue("");
+  const handleAdd = (e) => {
+    if (e.key === "Enter") {
+      if (value) onSubmit(value);
+      setValue("");
+    }
   };
 
   return (
@@ -20,8 +21,8 @@ export const Input = ({ onSubmit }) => {
         placeholder="Enter..."
         value={value}
         onChange={handleChange}
+        onKeyDown={handleAdd}
       />
-      <button onClick={handleAdd}>Add</button>
     </>
   );
 };
