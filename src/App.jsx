@@ -51,20 +51,22 @@ const Todos = () => {
 
   return (
     <>
-      <div className="border-2 border-cyan-300 rounded-md mx-2 my-4 p-4">
-        <div className="w-full">
-          <h1 className="text-center text-4xl font-sans font-semibold text-cyan-950 mb-4">
-            Todos
-          </h1>
-          <Input onSubmit={addTodo} />
+      <div class="min-h-screen">
+        <div class="border-2 border-cyan-300 rounded-md mx-2 my-4 p-4">
+          <div class="w-full">
+            <h1 class="text-center text-4xl font-sans font-semibold text-cyan-950 mb-4">
+              Todos
+            </h1>
+            <Input onSubmit={addTodo} />
+          </div>
         </div>
-      </div>
 
-      {state.todos.map((todo) => (
-        <div key={todo.todoId}>
-          <Todo todo={todo} addTask={addTask} toggle={toggle} />
-        </div>
-      ))}
+        {state.todos.map((todo) => (
+          <div key={todo.todoId}>
+            <Todo todo={todo} addTask={addTask} toggle={toggle} />
+          </div>
+        ))}
+      </div>
     </>
   );
 };

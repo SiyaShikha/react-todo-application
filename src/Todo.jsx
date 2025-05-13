@@ -7,12 +7,12 @@ export const Todo = ({ todo, addTask, toggle }) => {
   };
 
   return (
-    <div className="flex justify-center">
-      <div className="block w-full max-w-md p-6 bg-cyan-50 border border-cyan-200 rounded-lg shadow-lg hover:bg-cyan-100 hover:shadow-xl transition duration-300 my-4">
-        <h2 className="text-center text-2xl font-sans font-semibold text-cyan-800 mb-4">
+    <div class="flex justify-center">
+      <div class="block w-full max-w-md p-6 bg-cyan-50 border border-cyan-200 rounded-lg shadow-xl hover:bg-cyan-100 hover:scale-102 transition duration-300 my-4">
+        <h2 class="text-center text-2xl font-sans font-semibold text-cyan-800 mb-4">
           {todo.todoName}
         </h2>
-        <div className="mb-4">
+        <div class="mb-4">
           <Input onSubmit={handleAddTask} />
         </div>
         <Tasks
