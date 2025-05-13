@@ -1,20 +1,14 @@
-import React from "react";
-
 export const TaskItem = ({ task, done, taskId, todoId, toggle }) => {
   return (
-    <div>
-      {
-        /* <input
+    <div class="flex items-center cursor-pointer">
+      <input
+        class="mx-2"
         type="checkbox"
         checked={done}
         onChange={() => toggle(taskId, todoId)}
-      /> */
-      }
+      />
       <span
-        style={{
-          textDecoration: done ? "line-through" : "none",
-          cursor: "pointer",
-        }}
+        class={`${done ? "line-through text-gray-500" : "no-underline"}`}
         role="button"
         onClick={() => toggle(taskId, todoId)}
       >

@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import { useReducer } from "react";
 import { Input } from "./Input";
 import { Todo } from "./Todo";
 import { handleNewTask, handleNewTodo, handleToggle } from "./handleActions";
@@ -51,8 +51,15 @@ const Todos = () => {
 
   return (
     <>
-      <h1>Todos</h1>
-      <Input onSubmit={addTodo} />
+      <div className="border-2 border-cyan-300 rounded-md mx-2 my-4 p-4">
+        <div className="w-full">
+          <h1 className="text-center text-4xl font-sans font-semibold text-cyan-950 mb-4">
+            Todos
+          </h1>
+          <Input onSubmit={addTodo} />
+        </div>
+      </div>
+
       {state.todos.map((todo) => (
         <div key={todo.todoId}>
           <Todo todo={todo} addTask={addTask} toggle={toggle} />

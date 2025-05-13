@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 export const Input = ({ onSubmit }) => {
   const [value, setValue] = useState("");
@@ -16,13 +16,18 @@ export const Input = ({ onSubmit }) => {
 
   return (
     <>
-      <input
-        type="text"
-        placeholder="Enter..."
-        value={value}
-        onChange={handleChange}
-        onKeyDown={handleAdd}
-      />
+      <div class="flex justify-center w-full my-2">
+        <div class="flex justify-center w-full max-w-sm min-w-[200px]">
+          <input
+            class="w-full bg-white placeholder:text-slate-400 text-sm border border-slate-300 rounded-md px-3 py-3 transition duration-200 ease focus:outline-none focus:border-slate-500 hover:border-slate-500 shadow-sm focus:shadow"
+            type="text"
+            placeholder="Enter..."
+            value={value}
+            onChange={handleChange}
+            onKeyDown={handleAdd}
+          />
+        </div>
+      </div>
     </>
   );
 };

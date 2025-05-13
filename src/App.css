@@ -1,5 +1,5 @@
 @import "tailwindcss";
 
-@theme {
-  --color-mint-500: oklch(55.4% 0.046 257.417);
+body {
+  background: linear-gradient(to bottom, rgb(25, 151, 185), rgb(4, 59, 84));
 }
