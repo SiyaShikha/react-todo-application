@@ -3,6 +3,7 @@ import { Input } from "./Input";
 import { Todo } from "./Todo";
 import {
   handleDeleteTask,
+  handleDeleteTodo,
   handleNewTask,
   handleNewTodo,
   handleToggle,
@@ -12,6 +13,9 @@ const reducer = (state, action) => {
   switch (action.type) {
     case "ADD_TODO":
       return handleNewTodo(state, action);
+
+    case "DELETE_TODO":
+      return handleDeleteTodo(state, action);
 
     case "ADD_TASK":
       const { task, todoId } = action.payload;
@@ -39,6 +43,13 @@ const Todos = () => {
     dispatch({
       type: "ADD_TODO",
       payload: { todoName: todo, todoId: Date.now(), todoItems: [] },
+    });
+  };
+
+  const deleteTodo = (todoId) => {
+    dispatch({
+      type: "DELETE_TODO",
+      payload: { todoId },
     });
   };
 
@@ -86,6 +97,7 @@ const Todos = () => {
                 addTask={addTask}
                 deleteTask={deleteTask}
                 toggle={toggle}
+                deleteTodo={deleteTodo}
               />
             </div>
           ))}

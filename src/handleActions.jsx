@@ -21,6 +21,13 @@ export const handleNewTodo = (state, action) => {
   return { ...state, todos: [...state.todos, action.payload] };
 };
 
+export const handleDeleteTodo = (state, action) => {
+  const { todoId } = action.payload;
+  const reaminingTodos = state.todos.filter((todo) => todo.todoId !== todoId);
+
+  return { ...state, todos: reaminingTodos };
+};
+
 export const handleNewTask = (state, todoId, task) => {
   const updatedTodos = state.todos.map((todo) => {
     if (todo.todoId === todoId) {
