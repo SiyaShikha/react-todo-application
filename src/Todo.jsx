@@ -8,8 +8,8 @@ export const Todo = ({ todo, addTask, toggle }) => {
 
   return (
     <div class="flex justify-center">
-      <div class="block w-full max-w-md p-6 bg-cyan-50 border border-cyan-200 rounded-lg shadow-xl hover:bg-cyan-100 hover:scale-102 transition duration-300 my-4">
-        <h2 class="text-center text-2xl font-sans font-semibold text-cyan-800 mb-4">
+      <div class="block max-w-md p-6 bg-gradient-to-r from-cyan-600 to-cyan-900 border border-cyan-950 rounded-lg shadow-md shadow-cyan-950 hover:from-cyan-500 hover:to-cyan-700 hover:scale-102 transition duration-300 mt-54 w-600 h-170 overflow-scroll">
+        <h2 class="text-center text-4xl font-sans font-semibold text-white mb-4">
           {todo.todoName}
         </h2>
         <div class="mb-4">

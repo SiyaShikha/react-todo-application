@@ -3,7 +3,7 @@ import { TaskItem } from "./TaskItem";
 export const Tasks = ({ tasks, todoId, toggle }) => {
   return (
     <>
-      <div class="text-l mt-8">
+      <div class="text-2xl text-white mt-8">
         {tasks.map((item) => (
           <TaskItem
             {...item}
