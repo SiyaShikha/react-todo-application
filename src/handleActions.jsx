@@ -31,3 +31,17 @@ export const handleNewTask = (state, todoId, task) => {
 
   return { ...state, todos: updatedTodos };
 };
+
+export const handleDeleteTask = (state, todoId, taskId) => {
+  const updatedTodos = state.todos.map((todo) => {
+    if (todo.todoId === todoId) {
+      const remainingItems = todo.todoItems.filter((task) =>
+        task.taskId !== taskId
+      );
+      return { ...todo, todoItems: remainingItems };
+    }
+    return todo;
+  });
+
+  return { ...state, todos: updatedTodos };
+};

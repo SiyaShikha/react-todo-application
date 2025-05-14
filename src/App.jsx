@@ -1,7 +1,12 @@
 import { useReducer } from "react";
 import { Input } from "./Input";
 import { Todo } from "./Todo";
-import { handleNewTask, handleNewTodo, handleToggle } from "./handleActions";
+import {
+  handleDeleteTask,
+  handleNewTask,
+  handleNewTodo,
+  handleToggle,
+} from "./handleActions";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -11,6 +16,11 @@ const reducer = (state, action) => {
     case "ADD_TASK":
       const { task, todoId } = action.payload;
       return handleNewTask(state, todoId, task);
+
+    case "DELETE_TASK": {
+      const { todoId, taskId } = action.payload;
+      return handleDeleteTask(state, todoId, taskId);
+    }
 
     case "TOGGLE_TASK": {
       const { todoId, taskId } = action.payload;
@@ -42,6 +52,13 @@ const Todos = () => {
     });
   };
 
+  const deleteTask = (taskId, todoId) => {
+    dispatch({
+      type: "DELETE_TASK",
+      payload: { taskId, todoId },
+    });
+  };
+
   const toggle = (taskId, todoId) => {
     dispatch({
       type: "TOGGLE_TASK",
@@ -64,7 +81,12 @@ const Todos = () => {
         <div class="flex justify-start gap-6 mx-4">
           {state.todos.map((todo) => (
             <div key={todo.todoId}>
-              <Todo todo={todo} addTask={addTask} toggle={toggle} />
+              <Todo
+                todo={todo}
+                addTask={addTask}
+                deleteTask={deleteTask}
+                toggle={toggle}
+              />
             </div>
           ))}
         </div>

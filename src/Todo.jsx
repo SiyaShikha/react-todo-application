@@ -1,7 +1,7 @@
 import { Input } from "./Input";
 import { Tasks } from "./Tasks";
 
-export const Todo = ({ todo, addTask, toggle }) => {
+export const Todo = ({ todo, addTask, deleteTask, toggle }) => {
   const handleAddTask = (task) => {
     addTask(task, todo.todoId);
   };
@@ -19,6 +19,7 @@ export const Todo = ({ todo, addTask, toggle }) => {
           tasks={todo.todoItems}
           todoId={todo.todoId}
           toggle={toggle}
+          deleteTask={deleteTask}
         />
       </div>
     </div>

@@ -1,6 +1,6 @@
 import { TaskItem } from "./TaskItem";
 
-export const Tasks = ({ tasks, todoId, toggle }) => {
+export const Tasks = ({ tasks, todoId, toggle, deleteTask }) => {
   return (
     <>
       <div class="text-2xl text-white mt-8">
@@ -10,6 +10,7 @@ export const Tasks = ({ tasks, todoId, toggle }) => {
             todoId={todoId}
             key={item.taskId}
             toggle={toggle}
+            deleteTask={deleteTask}
           />
         ))}
       </div>
