@@ -80,7 +80,7 @@ const Todos = () => {
   return (
     <>
       <div class="min-h-screen">
-        <div class="border-2 border-cyan-700 rounded-md mx-2 my-4 p-4 w-full fixed">
+        <div class="mx-2 my-4 p-4 w-full fixed">
           <div class="w-full">
             <h1 class="text-center text-5xl font-sans font-semibold text-cyan-950 mb-8">
               Todos
